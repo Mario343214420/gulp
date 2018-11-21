@@ -1,0 +1,27 @@
+{
+  "name": "d1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": "",
+  "devDependencies": {
+    "@babel/core": "^7.1.6",
+    "@babel/preset-env": "^7.1.6",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^8.0.0",
+    "gulp-browserify": "^0.5.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mario343214420/gulp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mario343214420/gulp/issues"
+  },
+  "homepage": "https://github.com/Mario343214420/gulp#readme"
+}
