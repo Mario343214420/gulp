@@ -81,8 +81,9 @@ module.exports = {
       }
     ]
   },
-  // plugins: [new HtmlWebpackPlugin({
-  //   template: './src/index.tml'
-  // }),
-  // ]
+  plugins: [
+    new HtmlWebpackPlugin({
+    template: './src/index.html'
+  }),
+  ]
 }
