@@ -1,14 +1,14 @@
 /**
  * Created by Administrator on 2018/11/21.
  */
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const {resolve} = require('path');
-
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
 module.exports = {
-  entry: './src/js/index.js',
+  entry: ['./src/js/index.js', './src/index.html'],
   output: {
-    path: resolve(__dirname, "./build"),
-    filename: "./js/built.js",
+    path: resolve(__dirname, './build'),
+    filename: './js/built.js'
   },
   
   module: {
@@ -32,7 +32,7 @@ module.exports = {
             loader: 'url-loader',
             options: {
               limit: 8192,
-              publicPath: '../build/images',
+              publicPath: '../images',
               outputPath: 'images',
               name: '[hash:10].[ext]'
               
@@ -78,6 +78,15 @@ module.exports = {
             presets: ['@babel/preset-env']
           }
         }
+      },
+      {
+        test: /\.(html)$/,
+        use: {
+          loader: 'html-loader'
+          // options: {
+          //   minimize: true
+          // }
+        }
       }
     ]
   },
@@ -85,5 +94,15 @@ module.exports = {
     new HtmlWebpackPlugin({
     template: './src/index.html'
   }),
-  ]
+    new webpack.NamedModulesPlugin(),
+    new webpack.HotModuleReplacementPlugin()
+  ],
+  devServer: {
+    contentBase: './build',
+    hot: true,
+    port: 4000,
+    open: true
+    
+    
+  }
 }
